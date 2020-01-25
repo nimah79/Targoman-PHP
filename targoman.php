@@ -7,8 +7,9 @@
  * http://NimaH79.ir
  */
 
-function targoman($text) {
-    if(empty(trim($text))) {
+function targoman($text)
+{
+    if (empty(trim($text))) {
         return null;
     }
     $ch = curl_init('https://targoman.ir/API/');
@@ -20,11 +21,11 @@ function targoman($text) {
     $response = curl_exec($ch);
     curl_close($ch);
     $response = json_decode($response, true);
-    if(isset($response['result']['tr']['base'][0][1])) {
+    if (isset($response['result']['tr']['base'][0][1])) {
         return $response['result']['tr']['base'][0][1];
     }
+
     return null;
 }
 
 echo targoman('This is a test.');
-
