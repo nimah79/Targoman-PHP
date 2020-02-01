@@ -27,5 +27,3 @@ function targoman($text)
 
     return null;
 }
-
-echo targoman('This is a test.');
